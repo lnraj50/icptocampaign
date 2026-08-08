@@ -1,0 +1,301 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ICP to Campaign — Teaching Syllabus</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400;700&display=swap" rel="stylesheet">
+<style>:root{--n:#0b2030;--i:#132c3c;--g:#cba54b;--t:#2d8294;--gr:#2f745c;--o:#b77a3d;--p:#77579b;--r:#9d5c61;--paper:#f5f1e9;--m:#687582;--l:#ded7ca}*{box-sizing:border-box}body{margin:0;background:#c6c0b5;color:var(--i);font-family:"Lexend Deca",Arial,sans-serif}.deck{max-width:1440px;margin:auto;background:var(--paper)}.s{height:810px;padding:62px 74px 58px;position:relative;overflow:hidden;border-bottom:1px solid #beb6a9}.dark{background:var(--n);color:#fff}.ey{color:var(--g);font-size:14px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;margin-bottom:17px}.s h1,.s h2,.s h3{margin:0;font-weight:700;letter-spacing:-.045em}.s h1{font-size:64px;line-height:1.03;max-width:1000px}.s h2{font-size:42px;line-height:1.08}.s h3{font-size:20px}.sub{font-size:19px;line-height:1.45;color:var(--m);max-width:1000px;margin:18px 0}.dark .sub{color:#cbd5de}.rule{width:235px;height:5px;background:var(--g);margin:28px 0}.f{position:absolute;left:74px;right:74px;bottom:23px;display:flex;justify-content:space-between;font-size:12px;color:#7b8590}.dark .f{color:#9aaaba}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:28px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:26px}.card{background:#fff;border:1px solid var(--l);padding:18px;min-height:150px}.darkcard{background:#15394e;border:0;color:#fff}.darkcard p{color:#d7e0e7}.k{color:var(--g);font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase}.small{font-size:12px;line-height:1.5;color:var(--m)}.dark .small{color:#cbd5de}.flow{display:flex;align-items:center;gap:8px;margin-top:38px}.node{flex:1;background:#fff;border-top:6px solid var(--t);padding:17px;min-height:130px}.node:nth-of-type(3n){border-color:var(--gr)}.arr{font-size:25px;color:var(--g)}.use{background:#fff;border-left:7px solid var(--t);padding:18px;min-height:210px}.use:nth-child(2){border-color:var(--gr)}.use:nth-child(3){border-color:var(--o)}.use:nth-child(4){border-color:var(--p)}.toolrow{display:grid;grid-template-columns:160px 1fr 1fr 1fr;gap:0;margin-top:28px;font-size:12px}.toolrow div{background:#fff;border:1px solid var(--l);padding:14px;line-height:1.45}.toolrow .head{background:var(--n);color:#fff;font-weight:700}.toolrow .func{border-left:7px solid var(--t)}.toolrow .tech{border-left:7px solid var(--gr)}.toolrow .ai{border-left:7px solid var(--p)}.note{border-left:4px solid var(--t);background:#e8f1f3;padding:12px 16px;margin-top:18px;font-size:13px;line-height:1.45}.pill{display:inline-block;background:#f0e3bc;color:#624d1d;padding:6px 8px;margin:3px 2px 0 0;font-size:10px;font-weight:700}@media(max-width:900px){.s{height:auto;min-height:0;padding:40px 28px}.s h1{font-size:42px}.s h2{font-size:33px}.grid2,.grid3{grid-template-columns:1fr 1fr}.flow{flex-direction:column}.arr{transform:rotate(90deg)}.toolrow{grid-template-columns:1fr}.f{position:static;margin-top:28px}}
+
+.s{display:flex;flex-direction:column}
+.mod{display:grid;grid-template-columns:1fr 1fr 1fr;gap:15px;margin-top:22px}
+.col{background:#fff;border:1px solid var(--l);padding:16px 16px 18px;border-top:6px solid var(--t)}
+.col.b{border-top-color:var(--gr)}
+.col.c{border-top-color:var(--p)}
+.col h3{font-size:16px;margin-bottom:8px}
+.col ol,.col ul{margin:8px 0 0 16px;padding:0;font-size:12.5px;line-height:1.55;color:#3c4a56}
+.col li{margin-bottom:5px}
+.obj{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}
+.obj div{background:#eee9de;border-left:5px solid var(--g);padding:10px 12px;font-size:12px;line-height:1.45;color:#4a5560}
+.lane{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}
+.path{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:20px}
+.path .card{min-height:104px;padding:14px;border-top:5px solid var(--t)}
+.path .card:nth-child(4n+2){border-top-color:var(--gr)}
+.path .card:nth-child(4n+3){border-top-color:var(--o)}
+.path .card:nth-child(4n){border-top-color:var(--p)}
+.path h3{font-size:14px;margin-top:4px}
+.tbl{width:100%;border-collapse:collapse;margin-top:20px;font-size:12px;background:#fff}
+.tbl th{background:var(--n);color:#fff;text-align:left;padding:10px 12px;font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+.tbl td{border:1px solid var(--l);padding:9px 12px;line-height:1.45;vertical-align:top;color:#3c4a56}
+.tbl td:first-child{font-weight:700;color:var(--i)}
+.wk{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-top:22px}
+.wk div{background:#fff;border:1px solid var(--l);border-top:5px solid var(--t);padding:12px;font-size:11.5px;line-height:1.45;color:#4a5560;min-height:150px}
+.wk b{display:block;color:var(--i);font-size:12.5px;margin-bottom:6px}
+.spacer{flex:1}
+h2+.sub{margin-top:12px}
+.tight .use{min-height:172px;padding:16px}
+.tight{gap:14px}
+.dark .tbl td{background:#15394e;border-color:#24506a;color:#d7e0e7}
+.dark .tbl td:first-child{color:#fff}
+.col p{font-size:12.5px;line-height:1.55;color:#4a5560;margin:6px 0 0}
+</style></head>
+<body><div class="deck">
+<section class="s dark">
+<div class="ey">Curriculum · GTM research to campaign execution</div>
+<h1>From ICP to Campaign: a practical operating curriculum</h1>
+<div class="rule"></div>
+<div class="sub">Twelve modules that take a beginner from "I don't know where to start" to running scored accounts, mapped buying committees, and the right campaign lane for each account — with the functional process, a worked use case, and the tool and AI stack for every step.</div>
+<div class="grid3">
+<div class="card darkcard"><div class="k">Start here</div><h3>Module 0–3</h3><p class="small">Vocabulary, ICP definition, scoring, and account research. Answers "who is worth my time".</p></div>
+<div class="card darkcard"><div class="k">Build the machine</div><h3>Module 4–7</h3><p class="small">Enrichment, people research, data layer, and routing accounts into campaign lanes.</p></div>
+<div class="card darkcard"><div class="k">Run and improve</div><h3>Module 8–11</h3><p class="small">Campaign design, messaging, automation and AI, measurement, and a capstone build.</p></div>
+</div>
+<div class="f"><span>Define → research → enrich → route → activate → measure</span><span>01</span></div>
+</section><section class="s">
+<div class="ey">The syllabus at a glance</div>
+<h2>Where to start, and where it ends</h2>
+<div class="sub">Each module answers one question and produces one artifact. Do them in order — every module consumes the output of the one before it.</div>
+<div class="path">
+<div class="card"><div class="k">Module 0</div><h3>Foundations</h3><p class="small">Vocabulary, the funnel, why research precedes outreach.</p></div>
+<div class="card"><div class="k">Module 1</div><h3>ICP definition</h3><p class="small">Written ICP: fit, pain, triggers, exclusions.</p></div>
+<div class="card"><div class="k">Module 2</div><h3>Scoring &amp; tiering</h3><p class="small">100-point model, Tier A/B/C thresholds.</p></div>
+<div class="card"><div class="k">Module 3</div><h3>Account research</h3><p class="small">Account universe with evidence and triggers.</p></div>
+<div class="card"><div class="k">Module 4</div><h3>Enrichment &amp; hygiene</h3><p class="small">Normalized, deduplicated, trustworthy records.</p></div>
+<div class="card"><div class="k">Module 5</div><h3>People research</h3><p class="small">Buying committee mapped and verified.</p></div>
+<div class="card"><div class="k">Module 6</div><h3>Data layer</h3><p class="small">Raw, trusted, activation separation.</p></div>
+<div class="card"><div class="k">Module 7</div><h3>Segmentation &amp; routing</h3><p class="small">Rules that send an account to a lane.</p></div>
+<div class="card"><div class="k">Module 8</div><h3>Campaign types</h3><p class="small">Drip, nurture, ABM, trigger, re-engagement.</p></div>
+<div class="card"><div class="k">Module 9</div><h3>Message &amp; content</h3><p class="small">Role-specific narrative and CTA ladder.</p></div>
+<div class="card"><div class="k">Module 10</div><h3>Automation &amp; AI</h3><p class="small">Orchestration, agents, guardrails.</p></div>
+<div class="card"><div class="k">Module 11</div><h3>Measure &amp; improve</h3><p class="small">KPIs, diagnosis, model updates, capstone.</p></div>
+</div>
+<div class="note"><b>Golden rule for the whole course:</b> never research a person before the account qualifies, and never launch a campaign before the account is scored and routed. Research quality caps campaign quality.</div>
+<div class="spacer"></div>
+<div class="f"><span>Learning path</span><span>02</span></div>
+</section><section class="s">
+<div class="ey">Module 00</div>
+<h2>Foundations: the language and the loop</h2>
+<div class="sub">Before tools, agree on what the words mean. Most GTM programs fail because ICP, segment, lead, and account are used interchangeably.</div>
+<div class="obj"><div><b>Learning objective</b><br>Explain ICP, account, contact, buying committee, trigger, and lane in one sentence each.</div><div><b>Learning objective</b><br>Describe the seven-stage loop: define, discover, enrich, store, route, activate, measure.</div><div><b>Learning objective</b><br>Judge when a list is research and when it is just noise.</div></div>
+<div class="mod">
+<div class="col"><div class="k">Functional process</div><h3>Set the ground rules</h3><ol><li>Write one-line definitions for ICP, account, persona, trigger, lane, and suppression.</li><li>Draw your current funnel and mark where accounts enter today.</li><li>Identify the systems of record you already own (CRM, MAP, spreadsheets).</li><li>Agree who approves an ICP change and who owns data quality.</li><li>Set a single evidence standard: every claim needs a source URL and date.</li></ol></div>
+<div class="col b"><div class="k">Use case sample</div><h3>Team with 40,000 unused contacts</h3><p>A 300-person B2B software firm buys a 40k contact list and emails everyone. Reply rate 0.2%, domain reputation drops.</p><ul><li>Diagnosis: no ICP, no scoring, no evidence.</li><li>Fix path: define ICP, keep 1,800 accounts, suppress the rest.</li></ul></div>
+<div class="col c"><div class="k">Tools &amp; AI</div><h3>Starter stack</h3><ul><li>CRM: HubSpot or Salesforce (system of record).</li><li>Docs: a written ICP one-pager, versioned.</li><li>Spreadsheet or Airtable for the first 100 accounts.</li><li>AI: GPT-class / Claude / Gemini for definitions, summarizing, and challenge-my-assumption prompts.</li><li>Guardrail: AI drafts, a human approves.</li></ul></div>
+</div>
+<div class="note"><b>Exit criteria:</b> You can explain the full loop on a whiteboard and name the owner of each stage.</div>
+<div class="spacer"></div>
+<div class="f"><span>Module 00 · Foundations</span><span>03</span></div>
+</section><section class="s">
+<div class="ey">Module 01</div>
+<h2>ICP definition and research</h2>
+<div class="sub">The ICP is a decision rule, not a description. It must be specific enough that two people looking at the same company reach the same verdict.</div>
+<div class="obj"><div><b>Learning objective</b><br>Build an ICP from evidence: won deals, lost deals, churn, and market data.</div><div><b>Learning objective</b><br>Express fit as firmographics + complexity + pain + trigger + reachability.</div><div><b>Learning objective</b><br>Write explicit exclusions so the team can say no quickly.</div></div>
+<div class="mod">
+<div class="col"><div class="k">Functional process</div><h3>Define who is worth researching</h3><ol><li>Analyse your last 20 wins and 20 losses: what is common in the wins?</li><li>Draft fit dimensions: industry, employee band, geography, revenue, business model.</li><li>Add complexity signals: multiple systems, brands, regions, acquisitions.</li><li>Add problem fit: the pain you actually solve, in the customer's words.</li><li>Add trigger types and exclusions (no owner, no pain, no budget, wrong motion).</li><li>Validate with 10 real companies before you publish it.</li></ol></div>
+<div class="col b"><div class="k">Use case sample</div><h3>RevOps consolidation ICP</h3><p>B2B services and software, 200–5,000 employees, 2+ CRMs or a recent acquisition, a named RevOps or data owner, EU/UK/US.</p><ul><li>Exclude: <50 employees, no operations leader, single-system startups.</li><li>Trigger types: new RevOps hire, merger, platform migration, funding.</li></ul></div>
+<div class="col c"><div class="k">Tools &amp; AI</div><h3>Research and validation</h3><ul><li>Sources: CRM win/loss data, Crunchbase, industry reports, customer interviews.</li><li>Market sizing: Sales Navigator or Apollo filter counts to test if the ICP is big enough.</li><li>AI: cluster your won-account descriptions, extract shared attributes, draft an ICP hypothesis with cited evidence.</li><li>AI prompt pattern: "Here are 20 won and 20 lost accounts, what distinguishes them? List evidence, flag guesses."</li></ul></div>
+</div>
+<div class="note"><b>Exit criteria:</b> A one-page ICP with fit dimensions, triggers, exclusions, and an addressable count you believe.</div>
+<div class="spacer"></div>
+<div class="f"><span>Module 01 · ICP definition</span><span>04</span></div>
+</section><section class="s">
+<div class="ey">Module 02</div>
+<h2>Account scoring and tiering</h2>
+<div class="sub">Turn the ICP into a number so resourcing is a rule, not an opinion. Pain and timing should outweigh company size.</div>
+<div class="grid3">
+<div class="card" style="border-top:6px solid var(--t)"><div class="k">Scoring model · 100 points</div>
+<p class="small" style="margin-top:8px">Firmographic fit <b>20</b> · Data or process complexity <b>20</b> · Problem fit <b>20</b> · Marketing/RevOps maturity <b>15</b> · Active trigger <b>15</b> · Reachability <b>10</b></p>
+<p class="small">Score only from recorded evidence. No evidence, no points.</p></div>
+<div class="card" style="border-top:6px solid var(--gr)"><div class="k">Tiers drive investment</div>
+<p class="small" style="margin-top:8px"><b>Tier A 80–100</b> — ABM, executive-led, 1:1 research, human sequencing.</p>
+<p class="small"><b>Tier B 60–79</b> — personalized outbound and 1:few nurture.</p>
+<p class="small"><b>Tier C 40–59</b> — drip education, wait for a trigger.</p>
+<p class="small"><b>Below 40</b> — suppress and revisit quarterly.</p></div>
+<div class="card" style="border-top:6px solid var(--p)"><div class="k">Tools &amp; AI</div>
+<ul style="margin:8px 0 0 16px;font-size:12.5px;line-height:1.55;color:#3c4a56">
+<li>Score fields and calculated properties in HubSpot / Salesforce.</li>
+<li>PostgreSQL or a warehouse for weight changes and back-testing.</li>
+<li>Clay tables for scoring during enrichment.</li>
+<li>AI: classify free-text evidence into score dimensions, flag unsupported points, explain each score in one sentence.</li>
+</ul></div>
+</div>
+<table class="tbl"><tr><th>Worked example</th><th>Evidence</th><th>Points</th><th>Outcome</th></tr>
+<tr><td>Nordic logistics group</td><td>1,800 employees, 3 acquired brands, 2 CRMs, new VP RevOps (Q2), Salesforce + Marketo</td><td>Fit 18 · Complexity 20 · Problem 18 · Maturity 12 · Trigger 15 · Reach 8 = <b>91</b></td><td>Tier A → ABM + trigger outbound</td></tr>
+<tr><td>Regional SaaS, 90 staff</td><td>Single HubSpot instance, no ops owner, no trigger</td><td>Fit 8 · Complexity 4 · Problem 6 · Maturity 6 · Trigger 0 · Reach 6 = <b>30</b></td><td>Suppress → quarterly re-check</td></tr></table>
+<div class="note"><b>Exit criteria:</b> every account in your list carries a score, a tier, and a one-line reason a human can audit.</div>
+<div class="spacer"></div>
+<div class="f"><span>Module 02 · Scoring</span><span>05</span></div>
+</section><section class="s">
+<div class="ey">Module 03</div>
+<h2>Account research</h2>
+<div class="sub">Company research produces a hypothesis, not a row. For each account you need a problem you believe they have and the evidence that says so.</div>
+<div class="obj"><div><b>Learning objective</b><br>Build an account universe from filters, then narrow it with evidence.</div><div><b>Learning objective</b><br>Recognise the seven trigger families that make outreach timely.</div><div><b>Learning objective</b><br>Record source, date, and confidence for every claim you make.</div></div>
+<div class="mod">
+<div class="col"><div class="k">Functional process</div><h3>Research workflow</h3><ol><li>Build the universe: industry, size, geography, tech, growth filters.</li><li>Layer signals: hiring, funding, leadership change, M&amp;A, migration, expansion, regulation.</li><li>Read the primary sources: site, careers page, product docs, annual report, reviews.</li><li>Write a two-sentence pain hypothesis in the customer's language.</li><li>Attach evidence URLs, date, and a confidence level (high/medium/low).</li><li>Score, tier, and hand off — or reject with a reason.</li></ol></div>
+<div class="col b"><div class="k">Use case sample</div><h3>New RevOps leader after an acquisition</h3><p>A 1,200-person company hires a VP RevOps three months after acquiring a competitor; job posts mention "CRM consolidation".</p><ul><li>Hypothesis: duplicate accounts, conflicting owners, broken lifecycle stages.</li><li>Evidence: job ad, press release, two CRM tech signals.</li><li>Route: Tier A, ABM + trigger outbound, CTA = reconciliation workshop.</li></ul></div>
+<div class="col c"><div class="k">Tools &amp; AI</div><h3>Research stack</h3><ul><li>Universe: LinkedIn Sales Navigator, Apollo, ZoomInfo, Clay.</li><li>Signals: Crunchbase, job boards, BuiltWith/HG Insights, news alerts, G2.</li><li>Capture: Clay tables or PostgreSQL research table with source columns.</li><li>AI: summarize 10-K/press/careers pages, classify trigger type, draft the hypothesis, and list what evidence is missing.</li><li>Guardrail: AI may summarize sources; it may not invent them.</li></ul></div>
+</div>
+<div class="note"><b>Exit criteria:</b> A scored account list where each row has trigger, hypothesis, evidence links, and confidence.</div>
+<div class="spacer"></div>
+<div class="f"><span>Module 03 · Account research</span><span>06</span></div>
+</section><section class="s">
+<div class="ey">Module 04</div>
+<h2>Enrichment, identity and data hygiene</h2>
+<div class="sub">Personalization built on dirty data is worse than no personalization. Clean identity first, then enrich, then activate.</div>
+<div class="obj"><div><b>Learning objective</b><br>Normalize a company to one canonical account with parents and subsidiaries.</div><div><b>Learning objective</b><br>Set validation rules for domains, duplicates, and email verification.</div><div><b>Learning objective</b><br>Decide what AI may infer and what must be deterministic.</div></div>
+<div class="mod">
+<div class="col"><div class="k">Functional process</div><h3>Hygiene process</h3><ol><li>Resolve identity: canonical name + primary domain as the join key.</li><li>Model the account family: parent, subsidiary, region — keep local buying units.</li><li>Enrich firmographics, tech stack, and headcount from 2+ sources.</li><li>Deduplicate with match rules, then merge with an audit trail.</li><li>Verify emails; mark catch-all and risky addresses.</li><li>Stamp every field with source, date, and confidence; expire stale data.</li></ol></div>
+<div class="col b"><div class="k">Use case sample</div><h3>Three records, one customer</h3><p>"Acme Ltd", "ACME Group UK", and "Acme Logistics" exist as three accounts with three owners.</p><ul><li>Merge into one account family on domain; keep the UK subsidiary as a child.</li><li>Result: no duplicate outreach, one owner, one score.</li></ul></div>
+<div class="col c"><div class="k">Tools &amp; AI</div><h3>Enrichment stack</h3><ul><li>Clay, Apollo, ZoomInfo, Cognism for firmographic and contact data.</li><li>NeverBounce / ZeroBounce for email verification.</li><li>PostgreSQL matching tables or dbt models for dedupe logic.</li><li>Python for domain resolution and fuzzy matching.</li><li>AI: normalize industry text, classify company type, spot conflicting values — deterministic rules still decide.</li></ul></div>
+</div>
+<div class="note"><b>Exit criteria:</b> One trusted account record per real company, with evidence history and a confidence field.</div>
+<div class="spacer"></div>
+<div class="f"><span>Module 04 · Enrichment</span><span>07</span></div>
+</section><section class="s">
+<div class="ey">Module 05</div>
+<h2>People research and the buying committee</h2>
+<div class="sub">You do not sell to a company, you sell to four to seven people with different fears. Map them before you write a single email.</div>
+<div class="obj"><div><b>Learning objective</b><br>Identify economic buyer, champion, evaluator, user, and blocker.</div><div><b>Learning objective</b><br>Match each role to the value they care about and the proof they need.</div><div><b>Learning objective</b><br>Apply consent and compliance rules to contact data.</div></div>
+<div class="mod">
+<div class="col"><div class="k">Functional process</div><h3>People workflow</h3><ol><li>Confirm the account is Tier A/B before researching people.</li><li>Map roles by function, seniority, and region — not by title alone.</li><li>Find 3–6 contacts covering economic, champion, technical, and user roles.</li><li>Verify role from LinkedIn, site, talks, or posts; record the source.</li><li>Note each person's likely priority and objection.</li><li>Verify email; check consent basis and suppression before enrollment.</li></ol></div>
+<div class="col b"><div class="k">Use case sample</div><h3>RevOps consolidation committee</h3><p>One account, four people, four different messages from one hypothesis.</p><ul><li>CRO — pipeline visibility and forecast risk.</li><li>VP RevOps (champion) — ownership, lifecycle, routing.</li><li>CRM architect — integration and migration proof.</li><li>Marketing ops (user) — day-to-day workflow relief.</li></ul></div>
+<div class="col c"><div class="k">Tools &amp; AI</div><h3>People stack</h3><ul><li>Sales Navigator, Apollo, ZoomInfo, Cognism, Lusha.</li><li>Clay waterfall enrichment for coverage; email verification for safety.</li><li>CRM contact roles / buying-committee field to store the map.</li><li>AI: infer likely committee roles from an org's job titles, draft a one-line priority per person, spot committee gaps.</li><li>Compliance: GDPR/CAN-SPAM lawful basis, opt-out, and regional rules.</li></ul></div>
+</div>
+<div class="note"><b>Exit criteria:</b> Each Tier A/B account has a mapped, verified, compliant buying committee.</div>
+<div class="spacer"></div>
+<div class="f"><span>Module 05 · People research</span><span>08</span></div>
+</section><section class="s">
+<div class="ey">Module 06</div>
+<h2>The data layer: where everything lives</h2>
+<div class="sub">Separate the evidence you researched, the truth you trust, and the record you activate. Mixing them destroys either your audit trail or your campaigns.</div>
+<div class="flow">
+<div class="node"><div class="k">Raw layer</div><h3>Research &amp; sources</h3><p class="small">Source URLs, snapshots, enrichment responses, timestamps, raw scrapes. Never edited.</p></div>
+<div class="arr">→</div>
+<div class="node"><div class="k">Trusted layer</div><h3>Normalized accounts &amp; people</h3><p class="small">Canonical identity, score, tier, trigger, committee, confidence, owner.</p></div>
+<div class="arr">→</div>
+<div class="node"><div class="k">Activation layer</div><h3>CRM &amp; campaigns</h3><p class="small">Lifecycle stage, lane, enrollment, tasks, suppression, handoffs.</p></div>
+</div>
+<div class="grid3">
+<div class="card"><div class="k">Execution system</div><h3>HubSpot / Salesforce</h3><p class="small">Accounts, contacts, owners, activities, lifecycle, campaign enrollment, suppression lists.</p></div>
+<div class="card"><div class="k">Operational system</div><h3>PostgreSQL / Airtable / Clay</h3><p class="small">Research history, dedupe logic, score calculations, trigger event log, reconciliation.</p></div>
+<div class="card"><div class="k">Analytics system</div><h3>Snowflake · BigQuery · Power BI</h3><p class="small">Cross-source analysis, cohort and lane performance, attribution, pipeline reporting.</p></div>
+</div>
+<div class="note"><b>Use case:</b> a campaign changes lifecycle stage in the activation layer without touching the research evidence that justified the score — so you can still explain, six months later, why the account was Tier A. <b>Exit criteria:</b> you can trace any campaign enrollment back to its source URL.</div>
+<div class="spacer"></div>
+<div class="f"><span>Module 06 · Data layer</span><span>09</span></div>
+</section><section class="s">
+<div class="ey">Module 07</div>
+<h2>Segmentation: how one list becomes several campaigns</h2>
+<div class="sub">A lane is chosen by four inputs — tier, trigger state, awareness, and engagement. Write it as a rule so the routing is automatic and reviewable.</div>
+<table class="tbl">
+<tr><th>Condition</th><th>Tier</th><th>Trigger</th><th>Awareness / engagement</th><th>Campaign lane</th><th>Primary CTA</th></tr>
+<tr><td>Best-fit, active event</td><td>A (80+)</td><td>Active &lt; 90 days</td><td>Any</td><td>ABM + trigger outbound (1:1)</td><td>Diagnostic workshop</td></tr>
+<tr><td>Best-fit, no event</td><td>A</td><td>None</td><td>Cold</td><td>Executive ABM nurture (1:few)</td><td>Executive briefing</td></tr>
+<tr><td>Good fit, engaged</td><td>B (60–79)</td><td>Any</td><td>Opened / visited / downloaded</td><td>Nurture — problem to solution</td><td>Assessment or demo</td></tr>
+<tr><td>Good fit, cold</td><td>B</td><td>None</td><td>Cold</td><td>Personalized outbound + drip</td><td>Content offer</td></tr>
+<tr><td>Fits, too early</td><td>C (40–59)</td><td>None</td><td>Cold</td><td>Educational drip</td><td>Subscribe / webinar</td></tr>
+<tr><td>Known but dormant</td><td>Any</td><td>None</td><td>No activity 6–12 months</td><td>Re-engagement / reactivation</td><td>Opt-in refresh</td></tr>
+<tr><td>Below bar or no owner</td><td>&lt; 40</td><td>—</td><td>—</td><td>Suppress, review quarterly</td><td>None</td></tr>
+</table>
+<div class="note"><b>Rules that keep lanes clean:</b> one active lane per contact · a trigger promotes an account, it never demotes silently · every lane needs an exit and a suppression condition · sales-accepted accounts leave marketing lanes. <b>Exit criteria:</b> your routing table is written down and implemented as workflow logic.</div>
+<div class="spacer"></div>
+<div class="f"><span>Module 07 · Segmentation &amp; routing</span><span>10</span></div>
+</section><section class="s">
+<div class="ey">Module 08</div>
+<h2>Campaign types: drip, nurture, ABM and friends</h2>
+<div class="sub">Same account universe, different intent. The difference is who chooses the content — the calendar, the behaviour, or the account team.</div>
+<div class="grid2 tight" style="margin-top:20px">
+<div class="use"><div class="k">Time-based · 1:many</div><h3>Drip</h3><p class="small">Fixed sequence on a schedule, low personalization, education first. 5–7 emails over 6 weeks.<br><b>Use for:</b> Tier C, new subscribers, early awareness.<br><b>Sample:</b> "Five signs your CRM data is blocking forecasting" series.<br><b>Tools:</b> HubSpot sequences/workflows, Mailchimp, Instantly. <b>AI:</b> variant copy, subject-line testing.</p></div>
+<div class="use"><div class="k">Behaviour-based · 1:few</div><h3>Nurture</h3><p class="small">Branches on what the contact does; moves problem → approach → proof → offer.<br><b>Use for:</b> Tier B engaged, post-webinar, demo no-shows.<br><b>Sample:</b> pricing-page visit branches into an ROI calculator and a case study.<br><b>Tools:</b> HubSpot / Marketo / Customer.io, lead scoring. <b>AI:</b> next-best-content, intent classification.</p></div>
+<div class="use"><div class="k">Account-based · 1:1</div><h3>ABM</h3><p class="small">Account team targets the whole committee with a shared narrative and coordinated channels.<br><b>Use for:</b> Tier A, named accounts, expansion.<br><b>Sample:</b> CRO, RevOps and architect each get a role-specific asset plus a joint workshop invite.<br><b>Tools:</b> HubSpot ABM, Demandbase, 6sense, LinkedIn ads, direct mail. <b>AI:</b> account dossier, role-specific drafts.</p></div>
+<div class="use"><div class="k">Event-based · fast</div><h3>Trigger outbound</h3><p class="small">Fires within days of a signal: funding, hire, migration, acquisition, job post.<br><b>Use for:</b> any tier with a fresh, credible trigger.<br><b>Sample:</b> new VP RevOps → sales task + 3-step personalized sequence in 48 hours.<br><b>Tools:</b> n8n/Make, Clay webhooks, CRM tasks, Slack alerts. <b>AI:</b> signal summary, first-line drafting.</p></div>
+</div>
+<div class="grid3" style="margin-top:12px">
+<div class="card" style="min-height:0"><div class="k">Re-engagement</div><p class="small">Dormant 6–12 months. Short, honest, opt-in refresh, then suppress non-responders to protect deliverability.</p></div>
+<div class="card" style="min-height:0"><div class="k">Onboarding &amp; lifecycle</div><p class="small">Post-sale activation, adoption, expansion — same machinery, customer data instead of research data.</p></div>
+<div class="card" style="min-height:0"><div class="k">Event / webinar</div><p class="small">Workshop or roundtable as the CTA for Tier A. Invite, remind, follow up by attendance behaviour.</p></div>
+</div>
+<div class="spacer"></div>
+<div class="f"><span>Module 08 · Campaign types</span><span>11</span></div>
+</section><section class="s">
+<div class="ey">Module 09</div>
+<h2>Message, content and the CTA ladder</h2>
+<div class="sub">One account hypothesis becomes four messages. Personalization means relevance to a role's problem — not merging a first name.</div>
+<div class="obj"><div><b>Learning objective</b><br>Translate a pain hypothesis into role-specific value statements.</div><div><b>Learning objective</b><br>Build a CTA ladder from low commitment to a paid engagement.</div><div><b>Learning objective</b><br>Set a proof standard so no claim ships without evidence.</div></div>
+<div class="mod">
+<div class="col"><div class="k">Functional process</div><h3>Message build</h3><ol><li>State the account problem in one sentence, sourced from evidence.</li><li>Write the value per role: executive = risk/growth, champion = process, technical = architecture, user = daily relief.</li><li>Choose proof: case study, benchmark, teardown, calculator, or checklist.</li><li>Ladder the CTA: subscribe → guide → assessment → workshop → proposal.</li><li>Sequence channels: email, LinkedIn, ads, call, event.</li><li>Review: is every claim supported? Remove anything unverifiable.</li></ol></div>
+<div class="col b"><div class="k">Use case sample</div><h3>One hypothesis, four emails</h3><p>Trigger: acquisition + new RevOps leader. Shared narrative: "two CRMs are costing you forecast accuracy".</p><ul><li>CRO: forecast risk in the first board cycle post-merger.</li><li>RevOps: a 30-day consolidation sequence and ownership model.</li><li>Architect: integration pattern and data-governance controls.</li><li>Ops user: fewer manual merges each week.</li></ul></div>
+<div class="col c"><div class="k">Tools &amp; AI</div><h3>Content &amp; AI</h3><ul><li>HubSpot Marketing Hub or Marketo for assets, landing pages, and forms.</li><li>LinkedIn for role targeting; webinar tooling for workshop CTAs.</li><li>AI: draft role variants from the account dossier, tone checks, and translation.</li><li>AI: score your own draft — "list every claim and whether the evidence supports it".</li><li>Never let AI generate a metric, customer name, or quote.</li></ul></div>
+</div>
+<div class="note"><b>Exit criteria:</b> A message matrix: role × problem × proof × CTA, all traceable to evidence.</div>
+<div class="spacer"></div>
+<div class="f"><span>Module 09 · Message &amp; content</span><span>12</span></div>
+</section><section class="s">
+<div class="ey">Module 10</div>
+<h2>Automation, orchestration and the AI layer</h2>
+<div class="sub">Automation makes the routing table run itself. AI accelerates research and drafting inside guardrails — it never approves its own output.</div>
+<div class="toolrow">
+<div class="head">Stage</div><div class="head">Functional job</div><div class="head">Technology</div><div class="head">AI support</div>
+<div class="func">Ingest</div><div>Pull new accounts and signals into the research table daily.</div><div>Clay, Apollo/ZoomInfo APIs, n8n or Make schedules, Python jobs.</div><div>Summarize and classify each new signal; dedupe near-identical news.</div>
+<div class="tech">Decide</div><div>Score, tier, and select the lane from the routing rules.</div><div>CRM calculated properties, PostgreSQL functions, workflow branches.</div><div>Turn free-text evidence into score inputs and explain the score.</div>
+<div class="ai">Activate</div><div>Assign owner, create tasks, enroll approved contacts, notify sales.</div><div>HubSpot workflows, Salesforce Flow, Workato/Zapier, Slack, sequences.</div><div>Draft first-touch copy and next-best-action recommendations.</div>
+<div class="func">Control</div><div>Suppress, exit, cap frequency, respect consent and sales ownership.</div><div>Suppression lists, enrollment criteria, frequency caps, audit logs.</div><div>Flag missing fields, stale evidence, and unsupported personalization.</div>
+</div>
+<div class="grid3">
+<div class="card" style="border-top:6px solid var(--p)"><div class="k">AI you will actually use</div><p class="small">Chat/reasoning models for research summaries and drafts · embeddings for clustering and similarity · agents in Clay or Copilot Studio for repeatable lookups · transcription for call insight.</p></div>
+<div class="card" style="border-top:6px solid var(--o)"><div class="k">Guardrails</div><p class="small">Human approval before send · sources required for every claim · confidence thresholds · no AI-invented numbers or names · log prompts and outputs · review sampled output weekly.</p></div>
+<div class="card" style="border-top:6px solid var(--gr)"><div class="k">Build order</div><p class="small">Manual for 20 accounts → semi-automated with AI drafts → automated ingest and routing → agents only for steps you have already run by hand successfully.</p></div>
+</div>
+<div class="spacer"></div>
+<div class="f"><span>Module 10 · Automation &amp; AI</span><span>13</span></div>
+</section><section class="s">
+<div class="ey">Module 11</div>
+<h2>Measure, diagnose and improve</h2>
+<div class="sub">Measure the machine, not just the campaign. Most bad results come from research and routing errors, not from the email.</div>
+<div class="obj"><div><b>Learning objective</b><br>Track coverage, engagement, and pipeline by lane and by tier.</div><div><b>Learning objective</b><br>Diagnose whether a failure is data, routing, message, or timing.</div><div><b>Learning objective</b><br>Feed learnings back into the score weights and the ICP.</div></div>
+<div class="mod">
+<div class="col"><div class="k">Functional process</div><h3>Improvement loop</h3><ol><li>Measure: account coverage, committee coverage, reply, meeting, pipeline, win rate — split by lane and tier.</li><li>Compare lanes: is Tier A ABM outperforming Tier B outbound per account?</li><li>Diagnose failures: missing fields? wrong lane? weak proof? stale trigger?</li><li>Adjust one variable at a time; keep a change log.</li><li>Re-weight the score using accounts that actually converted.</li><li>Retire dead segments and re-publish the ICP quarterly.</li></ol></div>
+<div class="col b"><div class="k">Use case sample</div><h3>Drip beats ABM — why?</h3><p>Tier A ABM produces fewer meetings than the Tier C drip in month two.</p><ul><li>Check: committee coverage was 1.2 contacts per Tier A account.</li><li>Root cause is people research depth, not the campaign.</li><li>Fix in Module 05, not by rewriting emails.</li></ul></div>
+<div class="col c"><div class="k">Tools &amp; AI</div><h3>Measurement stack</h3><ul><li>CRM dashboards for lane, tier, and pipeline reporting.</li><li>Warehouse + Power BI / Looker for cohort and attribution analysis.</li><li>Data-quality KPIs: completeness, duplicate rate, correction rate, bounce rate.</li><li>AI KPIs: research hours saved, accepted recommendations, QA exception rate.</li><li>AI: cluster lost reasons and reply text to surface message themes.</li></ul></div>
+</div>
+<div class="note"><b>Exit criteria:</b> A monthly review where score weights, lanes, and the ICP are updated from evidence.</div>
+<div class="spacer"></div>
+<div class="f"><span>Module 11 · Measure &amp; improve</span><span>14</span></div>
+</section><section class="s">
+<div class="ey">Delivery plan</div>
+<h2>Six-week schedule and capstone</h2>
+<div class="sub">Two modules per week, each with a live exercise on the learner's own market. The capstone is a working mini-system, not a slide deck.</div>
+<div class="wk">
+<div><b>Week 1</b>Modules 00–01<br>Exercise: write the ICP one-pager and validate it against 10 real companies.</div>
+<div><b>Week 2</b>Modules 02–03<br>Exercise: score 30 accounts and research 10 with full evidence and triggers.</div>
+<div><b>Week 3</b>Modules 04–05<br>Exercise: clean and dedupe the 30, map committees on the top 10.</div>
+<div><b>Week 4</b>Modules 06–07<br>Exercise: build the data layer and write the routing table as workflow logic.</div>
+<div><b>Week 5</b>Modules 08–09<br>Exercise: design one drip, one nurture, one ABM play, one trigger sequence.</div>
+<div><b>Week 6</b>Modules 10–11<br>Exercise: automate ingest and routing, build the dashboard, run the first review.</div>
+</div>
+<div class="grid3">
+<div class="card" style="border-top:6px solid var(--t)"><div class="k">Capstone deliverable</div><h3>A live mini-GTM system</h3><p class="small">ICP one-pager · 30 scored accounts · 10 researched with evidence · committees mapped · routing table implemented · four campaign lanes built · one dashboard.</p></div>
+<div class="card" style="border-top:6px solid var(--gr)"><div class="k">Assessment</div><h3>Can it be audited?</h3><p class="small">Pick any enrolled contact at random: the learner must show the source, the score, the trigger, the lane rule, and the CTA — in under two minutes.</p></div>
+<div class="card" style="border-top:6px solid var(--p)"><div class="k">Common failure modes</div><p class="small">Researching people before qualifying accounts · scoring on size alone · one message for the whole committee · no suppression · AI output shipped unreviewed.</p></div>
+</div>
+<div class="spacer"></div>
+<div class="f"><span>Delivery plan</span><span>15</span></div>
+</section><section class="s dark">
+<div class="ey">Reference</div>
+<h2>Master stack: what to use at each stage</h2>
+<div class="sub">Start with the minimum column. Add the scale column only when volume or team size forces it.</div>
+<table class="tbl" style="background:transparent">
+<tr><th>Stage</th><th>Minimum stack</th><th>Scale stack</th><th>AI layer</th></tr>
+<tr><td>ICP &amp; scoring</td><td>Doc + spreadsheet, CRM properties</td><td>Salesforce/HubSpot scoring, warehouse back-testing</td><td>Pattern analysis on won/lost accounts</td></tr>
+<tr><td>Account research</td><td>Sales Navigator, Crunchbase, careers pages</td><td>ZoomInfo, Clay, intent (6sense, Demandbase)</td><td>Source summarization, trigger classification</td></tr>
+<tr><td>Enrichment</td><td>Apollo, manual verification</td><td>Clay waterfall, Cognism, Python matching, dbt</td><td>Field normalization, conflict detection</td></tr>
+<tr><td>People research</td><td>LinkedIn + email verification</td><td>Multi-provider waterfall, CRM contact roles</td><td>Committee gap detection, role inference</td></tr>
+<tr><td>Data layer</td><td>CRM + Airtable</td><td>PostgreSQL + Snowflake/BigQuery</td><td>Anomaly and duplicate flagging</td></tr>
+<tr><td>Campaigns</td><td>HubSpot workflows &amp; sequences</td><td>Marketo/Customer.io, LinkedIn ABM, ads</td><td>Copy variants, next-best-content</td></tr>
+<tr><td>Orchestration</td><td>Zapier or Make</td><td>n8n, Workato, Python APIs</td><td>Agentic lookups with human approval</td></tr>
+<tr><td>Measurement</td><td>CRM dashboards</td><td>Power BI / Looker, attribution models</td><td>Reply and lost-reason clustering</td></tr>
+</table>
+<div class="sub" style="margin-top:20px"><b>The one-line summary of the whole course:</b> define who is worth researching, research accounts before people, keep the data trustworthy, route each account to the lane its tier and trigger deserve, and let AI accelerate the work a human still approves.</div>
+<div class="spacer"></div>
+<div class="f"><span>Reference · Tools, technology and AI</span><span>16</span></div>
+</section>
+</div></body></html>
