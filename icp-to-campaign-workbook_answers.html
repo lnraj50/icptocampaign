@@ -384,6 +384,70 @@ const TOOL_ANSWERS={
  ]
 };
 
+
+/* ---- model answers for the common failure modes (additive) ---- */
+const PIT_ANSWERS={
+ "0": [
+  "Replace prose with a pass/fail rule: 4 firmographic gates (industry, 50&ndash;500 employees, DACH/UK, martech stack present) plus 2 exclusions. Marmato's rewrite cut the qualifying universe from 40,000 to 1,800 accounts and lifted reply rate from 0.2% to 3.1%.",
+  "Name a data owner before buying anything. Marmato assigned one RevOps owner with a weekly 30-minute data-quality review (completeness, duplicates, bounce) &mdash; only then were Clay and n8n switched on.",
+  "Report both, but commit to pipeline. Lead volume is a diagnostic; the quarterly target is &euro;1.2m qualified pipeline from 1,800 accounts, not 5,000 MQLs."
+ ],
+ "1": [
+  "Test the rule against 10 companies you have never sold to. Marmato ran 10 unknown DACH accounts through the draft ICP: 3 passed, 2 failed on stack, 5 were ambiguous &mdash; the ambiguity became two new gates.",
+  "Write exclusions explicitly: no agencies reselling our service, no &lt;50 employees, no accounts in an open competitor contract with &gt;6 months left. Manager escalations on fit dropped from ~8/week to 1.",
+  "Validate before publishing. The ICP one-pager is versioned (v1.3, dated), signed off by sales and marketing, and re-validated each quarter against 10 real accounts and last quarter's closed-won."
+ ],
+ "2": [
+  "Score only from recorded evidence: each dimension needs a source URL and a capture date, otherwise it scores 0. Marmato's audit found 22% of Tier A points came from unsourced claims; removing them demoted 7 accounts.",
+  "Re-score nightly and expire triggers at 90 days. Stale triggers had kept 11 accounts in Tier A for a full quarter with zero activity.",
+  "Make tiers cost money: Tier A gets 1:1 ABM with a named owner and 60 minutes of research; Tier B gets a light-research sequence; Tier C gets drip only. If effort does not change, delete the tiers."
+ ],
+ "3": [
+  "Research is a claim plus a source plus a date plus a confidence level. A Crunchbase summary pasted into a field is not research &mdash; Marmato's standard is 5 evidenced rows per Tier A account, each independently checkable.",
+  "QA every claim against its link. A weekly 20-row sample review found 15% of sources did not support the claim; those rows are voided, not corrected in place.",
+  "Reserve human research for Tier A and B (60 and 15 minutes). Tier C stays database-only. That reallocation returned about 6 hours per researcher per week."
+ ],
+ "4": [
+  "Never merge destructively: keep both source records, write a merge log with who, when, why, and a one-click unmerge. Marmato retains merge history for 12 months.",
+  "Model subsidiaries as their own accounts linked to a parent, and route on the buying unit. Rolling three DACH subsidiaries into one parent had collapsed 3 real opportunities into 1.",
+  "Treat vendor headcount as a signal, not a fact: require two sources for any gating field, and mark single-source values low confidence so they cannot trigger Tier A."
+ ],
+ "5": [
+  "Map the five roles the decision requires first, then find the people. Marmato requires all five roles covered (economic buyer, champion, technical evaluator, end user, blocker) before an ABM play can launch.",
+  "Identify the blocker in week one &mdash; usually security or legal &mdash; and pre-empt with a DPA and security one-pager attached to the first Tier A touch. Late-stage stalls fell from 4 to 1 per quarter.",
+  "Write fears and wins in the buyer's own words, quoted from calls, review sites and job posts &mdash; never paraphrased into Marmato's marketing language."
+ ],
+ "6": [
+  "Use three layers: raw (immutable ingest), trusted (resolved and evidenced), activation (scores, tiers, lanes). Enrichment writes to raw only, so it can never overwrite evidence.",
+  "Version score weights (v1 &rarr; v1.3, each dated) and stamp every scored account with the version used, so any historic decision can be explained.",
+  "Activation state lives in HubSpot as the system of record &mdash; owner, lane, enrolment, suppression. Private spreadsheet views are read-only exports, never sources."
+ ],
+ "7": [
+  "Write routing as a table (condition &rarr; lane &rarr; owner &rarr; exit) and implement it directly in n8n. If a rule cannot be expressed as a row, it is not a rule.",
+  "Enforce one active lane per contact in the workflow: enrolment checks for an existing lane and defers instead of adding. Overlaps went from 60+/month to 0.",
+  "Define re-entry explicitly: after exit, a 14-day cooldown, then re-score; re-engaged accounts return to the lane their new score dictates rather than falling out of all lanes."
+ ],
+ "8": [
+  "Do not run ABM below 3 covered committee roles. The Tier A underperformance traced to 1.2 contacts per account &mdash; those accounts were parked in nurture until coverage reached 3.",
+  "Triggers have a 14-day activation window and expire at 90 days. Marmato's n8n job alerts the owner within 24 hours of a funding or hiring signal.",
+  "One lane per contact, enforced at enrolment; drip and nurture check the same lane field, so a contact cannot receive both."
+ ],
+ "9": [
+  "Rewrite from the role's decision, not the job title: the economic buyer gets cost-of-inaction, the technical evaluator gets integration detail, the end user gets a day-in-the-life change. Same account, four genuinely different messages.",
+  "No claim ships without a source; the QA step blocks send on any unsourced number, name or quote. Zero AI-generated customers, metrics or quotes &mdash; ever.",
+  "Match the CTA to the tier: Tier A a diagnostic workshop, Tier B a benchmark or teardown, Tier C subscribe/webinar. Demo-only asks were the single biggest cause of the 0.2% reply rate."
+ ],
+ "10": [
+  "Fix the manual process on paper first, then automate it. Marmato ran routing manually for two weeks, corrected 9 rule gaps, and only then built the n8n workflow.",
+  "Cap at 2 emails per contact per week and 4 per account per week, enforced globally with nightly suppression sync &mdash; regardless of how well the account is routed.",
+  "AI proposes, humans approve: every activation decision needs a logged approval with the prompt, the output and the approver; 90-day retention and a weekly 20-activation QA sample."
+ ],
+ "11": [
+  "Split every metric by lane and tier. The blended reply rate hid Tier C dragging the average down 1.4 points and Tier A ABM underperforming a drip.",
+  "Diagnose in order &mdash; data, then routing, then message, then timing. Most failures stop at the first two; copy is the last suspect, not the first.",
+  "Retire segments deliberately: any segment with zero opportunities over two quarters is closed at the quarterly review, logged in the change log, and its budget moved to a validated lane."
+ ]
+};
 /* ---- model answers for the functional process steps (additive) ---- */
 const OBJ_ANSWERS={
  "0": [
@@ -721,10 +785,11 @@ function extraHTML(id){
   const x=EXTRA[id]; if(!x) return "";
   const n=`<ul>${x.notes.map(s=>`<li>${s}</li>`).join("")}</ul>`;
   const a=`<ol class="ansl">${x.answers.map(p=>`<li><strong>${p[0]}</strong><div class="note">${p[1]}</div></li>`).join("")}</ol>`;
-  const p=`<ul>${x.pitfalls.map(s=>`<li>${s}</li>`).join("")}</ul>`;
+  const pa=PIT_ANSWERS[id];
+  const p=`<ul>${x.pitfalls.map((s,i)=>`<li>${s}${(pa&&pa[i])?`<div class="ans"><b>Fix:</b> ${pa[i]}</div>`:""}</li>`).join("")}</ul>${pa?`<button type="button" class="btn ansbtn" data-anstoggle="pit${id}">Show answers</button>`:""}`;
   return `
   <details class="pane notes" open><summary>Study notes — the detail behind this module</summary>${n}</details>
-  <details class="pane pit"><summary>Common failure modes</summary>${p}</details>
+  <details class="pane pit proccard" data-proc="pit${id}"><summary>Common failure modes</summary>${p}</details>
   <details class="pane ans"><summary>Model answers &amp; answer key — open after you have attempted the exercise</summary>${a}</details>`;
 }
 
